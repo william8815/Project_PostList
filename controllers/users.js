@@ -70,7 +70,7 @@ const userController = {
     if (!validator.isLength(password, { min: 8 }))
       next(appError(400, "密碼不能低於 8 碼", next));
     // 密碼確認
-    if (password === confirmPassword) next(appError(400, "新密碼不一致", next));
+    if (password !== confirmPassword) next(appError(400, "新密碼不一致", next));
     // 密碼加密
     password = await bcrypt.hash(password, 12);
     // 更新用戶密碼
