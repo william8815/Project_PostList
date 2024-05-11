@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "7e9069b1-ca9e-4c31-8827-5c9c0dec4ef5",
+		"name": "Project_PostList",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21746051"
+	},
+	"item": [
+		{
+			"name": "取得所有貼文",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://project-postlist.onrender.com/posts",
+					"protocol": "https",
+					"host": [
+						"project-postlist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得所有用戶",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://project-postlist.onrender.com/users",
+					"protocol": "https",
+					"host": [
+						"project-postlist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"williamhsu123@gmail.com\",\r\n    \"password\": \"1234qwer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://project-postlist.onrender.com/users/login",
+					"protocol": "https",
+					"host": [
+						"project-postlist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "註冊",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"william\",\r\n    \"email\": \"williamhsu123@gmail.com\",\r\n    \"password\": \"qwer1234\",\r\n    \"confirmPassword\": \"qwer1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://project-postlist.onrender.com/users/signup",
+					"protocol": "https",
+					"host": [
+						"project-postlist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "密碼更新",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\" : \"1234qwer\",\r\n    \"confirmPassword\": \"1234qwer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://project-postlist.onrender.com/users/updatePassword",
+					"protocol": "https",
+					"host": [
+						"project-postlist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增貼文",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"663ec49d3008fb42e15dcc97\",\r\n    \"content\": \"hello, world\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://project-postlist.onrender.com/posts",
+					"protocol": "https",
+					"host": [
+						"project-postlist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新貼文",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"hello, world 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://project-postlist.onrender.com/posts/663ec62b3008fb42e15dccac",
+					"protocol": "https",
+					"host": [
+						"project-postlist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts",
+						"663ec62b3008fb42e15dccac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除指定貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://project-postlist.onrender.com/posts/663ec62b3008fb42e15dccac",
+					"protocol": "https",
+					"host": [
+						"project-postlist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts",
+						"663ec62b3008fb42e15dccac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除所有貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://project-postlist.onrender.com/posts",
+					"protocol": "https",
+					"host": [
+						"project-postlist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
