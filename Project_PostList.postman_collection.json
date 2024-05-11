@@ -265,6 +265,42 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "更新用戶資料 Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjYWY5MDk4MjAzZGJiNmNmYjhkNSIsImlhdCI6MTcxNTM5MTI0NywiZXhwIjoxNzE1OTk2MDQ3fQ.1DIdYL1Y6_3Y3CMxDFugSCjNjdXoJ8BP3dGd3LU-_Rc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"william123\",\r\n    \"sex\": \"male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://project-postlist.onrender.com/users/profile",
+					"protocol": "https",
+					"host": [
+						"project-postlist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
