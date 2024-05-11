@@ -60,9 +60,6 @@ app.use((err, req, res, next) => {
       message: "系統錯誤，請恰系統管理員",
     });
   }
-  // res.status(500).send({
-  //   err: err.message,
-  // });
 });
 
 // 程式出現重大錯誤時，補捉程式錯誤

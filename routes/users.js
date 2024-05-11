@@ -9,6 +9,11 @@ router.get("/", handleErrorAsync(userController.getUsers));
 router.post("/signup", handleErrorAsync(userController.signup));
 router.post("/login", handleErrorAsync(userController.login));
 router.get("/profile/", isAuth, handleErrorAsync(userController.getProfile));
+router.patch(
+  "/profile/",
+  isAuth,
+  handleErrorAsync(userController.updateProfile)
+);
 router.post(
   "/updatePassword",
   isAuth,

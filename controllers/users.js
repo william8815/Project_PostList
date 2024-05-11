@@ -48,17 +48,33 @@ const userController = {
     if (!password) next(appError(400, "密碼 欄位不能為空", next));
     // 將用戶的 password 顯示出來 做比對
     const user = await User.findOne({ email }).select("+password");
-    console.log(user);
     const isAuth = await bcrypt.compare(password, user.password);
     if (!isAuth) return next(appError(400, "您輸入的密碼不正確", next));
     // 登入成功
     // 產生 & 回傳 JWT token
     generateSendJWT(user, 200, res);
   },
-  getProfile: (req, res, next) => {
+  getProfile: async (req, res, next) => {
     res.send({
       status: "success",
       user: req.user,
+    });
+  },
+  updateProfile: async (req, res, next) => {
+    let { name, sex, photo } = req.body;
+    // 不能為空值
+    if (!name) next(appError(400, "名稱欄位不能為空", next));
+    let newUserProfile = {
+      name,
+      sex,
+      photo,
+    };
+    const user = await User.findByIdAndUpdate(req.user.id, newUserProfile, {
+      runValidators: true,
+    });
+    res.send({
+      status: "success",
+      user,
     });
   },
   updatePassword: async (req, res, next) => {
