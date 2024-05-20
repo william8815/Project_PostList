@@ -59,6 +59,10 @@ app.use((err, req, res, next) => {
     err.message = `id ${err.value} 格式錯誤，請重新輸入`;
     err.isOperational = true;
   }
+  if (err.name === "JsonWebTokenError") {
+    err.message = "token 無效或過期，請重新登入!";
+    err.isOperational = true;
+  }
   if (err.isOperational) {
     res.status(err.statusCode).send({
       message: err.message,
