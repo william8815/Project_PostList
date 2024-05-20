@@ -1,6 +1,5 @@
 const Post = require("../models/posts");
 const User = require("../models/users");
-const handleError = require("../services/handleError");
 const handleSuccess = require("../services/handleSuccess");
 const appError = require("../services/appError");
 
@@ -22,8 +21,9 @@ const postController = {
   createPost: async (req, res, next) => {
     let { user, content } = req.body;
     // 自訂定錯誤
-    if (user === undefined) next(appError(400, "無此 user 資料", next));
-    if (content === undefined) next(appError(400, "無填寫 content 資料", next));
+    if (user === undefined) return next(appError(400, "無此 user 資料", next));
+    if (content === undefined || content.trim() === "")
+      return next(appError(400, "無填寫 content 資料", next));
     let post = await Post.create({
       user,
       content,
@@ -37,13 +37,19 @@ const postController = {
   deletePost: async (req, res, next) => {
     let { id } = req.params;
     if (id === undefined) return next(appError(400, "無此 貼文id", next));
+    let hasPost = await Post.findById(id);
+    if (!hasPost) return next(appError(400, "無此 貼文id", next));
     let post = await Post.findByIdAndDelete(id);
     handleSuccess(res, post);
   },
   updatePost: async (req, res, next) => {
     let { id } = req.params;
     if (id === undefined) return next(appError(400, "無此 貼文id", next));
+    let hasPost = await Post.findById(id);
+    if (!hasPost) return next(appError(400, "無此 貼文id", next));
     let { name, content, image } = req.body;
+    if (content === undefined || content.trim() === "")
+      return next(appError(400, "無填寫 content 資料", next));
     let post = await Post.findByIdAndUpdate(id, {
       name,
       content,
