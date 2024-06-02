@@ -7,300 +7,355 @@
 	},
 	"item": [
 		{
-			"name": "取得所有貼文",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://project-postlist.onrender.com/posts",
-					"protocol": "https",
-					"host": [
-						"project-postlist",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"posts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "取得所有用戶",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://project-postlist.onrender.com/users",
-					"protocol": "https",
-					"host": [
-						"project-postlist",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "登入",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"williamhsu123@gmail.com\",\r\n    \"password\": \"1234qwer\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "會員功能",
+			"item": [
+				{
+					"name": "登入 會員",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"williamhsu123456@gmail.com\",\r\n    \"password\": \"qwer1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users/login",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"login"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://project-postlist.onrender.com/users/login",
-					"protocol": "https",
-					"host": [
-						"project-postlist",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"users",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "註冊",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"william\",\r\n    \"email\": \"williamhsu123@gmail.com\",\r\n    \"password\": \"qwer1234\",\r\n    \"confirmPassword\": \"qwer1234\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "註冊 會員",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"william\",\r\n    \"email\": \"williamhsu123456@gmail.com\",\r\n    \"password\": \"qwer1234\",\r\n    \"confirmPassword\": \"qwer1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users/signup",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://project-postlist.onrender.com/users/signup",
-					"protocol": "https",
-					"host": [
-						"project-postlist",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"users",
-						"signup"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "密碼更新",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"password\" : \"1234qwer\",\r\n    \"confirmPassword\": \"1234qwer\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "重設 密碼",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\" : \"1234qwer\",\r\n    \"confirmPassword\": \"1234qwer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users/updatePassword",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"updatePassword"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://project-postlist.onrender.com/users/updatePassword",
-					"protocol": "https",
-					"host": [
-						"project-postlist",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"users",
-						"updatePassword"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "新增貼文",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user\": \"663ec49d3008fb42e15dcc97\",\r\n    \"content\": \"hello, world\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "取得 個人資料",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGFhZjljYjM4N2IxYzQ2NWQwNmJkZCIsImlhdCI6MTcxNzM0MTM0NiwiZXhwIjoxNzE3OTQ2MTQ2fQ.OFnRQe6Qtgu8Cqpl_tivZXbUbVROF4wBlUxeRlRCJbg"
+							}
+						],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users/profile/",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile",
+								""
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://project-postlist.onrender.com/posts",
-					"protocol": "https",
-					"host": [
-						"project-postlist",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"posts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "更新貼文",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"content\": \"hello, world 2\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "更新 個人資料",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjYWY5MDk4MjAzZGJiNmNmYjhkNSIsImlhdCI6MTcxNTM5MTI0NywiZXhwIjoxNzE1OTk2MDQ3fQ.1DIdYL1Y6_3Y3CMxDFugSCjNjdXoJ8BP3dGd3LU-_Rc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"william123\",\r\n    \"sex\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users/profile",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "https://project-postlist.onrender.com/posts/663ec62b3008fb42e15dccac",
-					"protocol": "https",
-					"host": [
-						"project-postlist",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"posts",
-						"663ec62b3008fb42e15dccac"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "刪除指定貼文",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://project-postlist.onrender.com/posts/663ec62b3008fb42e15dccac",
-					"protocol": "https",
-					"host": [
-						"project-postlist",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"posts",
-						"663ec62b3008fb42e15dccac"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "刪除所有貼文",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://project-postlist.onrender.com/posts",
-					"protocol": "https",
-					"host": [
-						"project-postlist",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"posts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "更新用戶資料 Copy",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjYWY5MDk4MjAzZGJiNmNmYjhkNSIsImlhdCI6MTcxNTM5MTI0NywiZXhwIjoxNzE1OTk2MDQ3fQ.1DIdYL1Y6_3Y3CMxDFugSCjNjdXoJ8BP3dGd3LU-_Rc",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"william123\",\r\n    \"sex\": \"male\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "動態貼文",
+			"item": [
+				{
+					"name": "取得 所有貼文",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/posts",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://project-postlist.onrender.com/users/profile",
-					"protocol": "https",
-					"host": [
-						"project-postlist",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"users",
-						"profile"
-					]
+				{
+					"name": "新增 一則貼文",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGFiNThlYzE0M2M1OTc0MTkwNGVlZSIsImlhdCI6MTcxNjE3NTE1NCwiZXhwIjoxNzE2Nzc5OTU0fQ.vfQi87yvT-3YWzktgAsxGQ82PCKmYzOuCpXGRHsydCc"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"664ab58ec143c59741904eee\",\r\n    \"content\": \"test 123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://project-postlist.onrender.com/posts",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新 指定貼文",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGFiNThlYzE0M2M1OTc0MTkwNGVlZSIsImlhdCI6MTcxNjE3NTE1NCwiZXhwIjoxNzE2Nzc5OTU0fQ.vfQi87yvT-3YWzktgAsxGQ82PCKmYzOuCpXGRHsydCc"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"testtest123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://project-postlist.onrender.com/posts/664ac1696de0b7413ce39264",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"664ac1696de0b7413ce39264"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "刪除 指定貼文",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGFiNThlYzE0M2M1OTc0MTkwNGVlZSIsImlhdCI6MTcxNjE3NTE1NCwiZXhwIjoxNzE2Nzc5OTU0fQ.vfQi87yvT-3YWzktgAsxGQ82PCKmYzOuCpXGRHsydCc"
+							}
+						],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/posts/664ac1696de0b7413ce39264",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"664ac1696de0b7413ce39264"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "刪除 所有貼文",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/posts",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "其他",
+			"item": [
+				{
+					"name": "上傳圖片至 FireBase",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGFiNThlYzE0M2M1OTc0MTkwNGVlZSIsImlhdCI6MTcxNzM0MTcyOCwiZXhwIjoxNzE3OTQ2NTI4fQ.zqY8BVt28vjXCeJhR1ZRLds3ynojIvhQeElvZCvt4OM"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/williamHsu/OneDrive/圖片/螢幕擷取畫面/螢幕擷取畫面 2024-06-02 223459.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://project-postlist.onrender.com/upload/file",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"upload",
+								"file"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
