@@ -17,6 +17,7 @@ require("./connections/posts");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const postsRouter = require("./routes/posts");
+const uploadRouter = require("./routes/upload");
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/posts", postsRouter);
+app.use("/upload", uploadRouter);
 // 404 錯誤
 app.use((req, res, next) => {
   res.status(404);
