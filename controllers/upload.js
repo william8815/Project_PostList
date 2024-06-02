@@ -5,6 +5,7 @@ const appError = require("../services/appError");
 
 const uploadController = {
   uploadImage: async (req, res, next) => {
+    if (!req.files) return next(appError(400, "未設置 key 值 : files", next));
     if (!req.files.length) return next(appError(400, "尚未上傳檔案", next));
     // 取得上傳的檔案資訊列表裡面的第一個檔案
     const file = req.files[0];
