@@ -66,6 +66,10 @@ app.use((err, req, res, next) => {
     err.message = "token 無效或過期，請重新登入!";
     err.isOperational = true;
   }
+  if (err.name === "MulterError") {
+    err.message = err.message;
+    err.isOperational = true;
+  }
   if (err.isOperational) {
     res.status(err.statusCode).send({
       message: err.message,
