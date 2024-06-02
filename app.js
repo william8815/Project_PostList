@@ -13,6 +13,7 @@ process.on("uncaughtException", (err) => {
 });
 
 require("./connections/posts");
+require("./connections/passport");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");

@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema(
       default: Date.now,
       select: false,
     },
+    googleId: String,
   },
   {
     versionKey: false,

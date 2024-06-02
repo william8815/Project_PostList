@@ -41,5 +41,12 @@ const generateSendJWT = (user, statusCode, res) => {
     },
   });
 };
+const generateUrlJWT = (user, res) => {
+  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_DAY,
+  });
+  user.password = undefined;
+  res.redirect(`/callback?token=${token}&name=${user.name}`);
+};
 
-module.exports = { isAuth, generateSendJWT };
+module.exports = { isAuth, generateSendJWT, generateUrlJWT };
