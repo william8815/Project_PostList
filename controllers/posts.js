@@ -57,5 +57,23 @@ const postController = {
     });
     handleSuccess(res, post);
   },
+  createLikes: async (req, res, next) => {
+    const _id = req.params.id;
+    await Post.findOneAndUpdate({ _id }, { $addToSet: { likes: req.user.id } });
+    res.status(201).send({
+      status: "success",
+      postId: _id,
+      userId: req.user.id,
+    });
+  },
+  deleteLikes: async (req, res, next) => {
+    const _id = req.params.id;
+    await Post.findOneAndUpdate({ _id }, { $pull: { likes: req.user.id } });
+    res.status(201).send({
+      status: "success",
+      postId: _id,
+      userId: req.user.id,
+    });
+  },
 };
 module.exports = postController;

@@ -18,10 +18,12 @@ const postSchema = new mongoose.Schema(
       type: mongoose.Schema.ObjectId, // 引用 user model 中資料 id
       required: [true, "貼文姓名未填寫"],
     },
-    likes: {
-      type: Number,
-      default: 0,
-    },
+    likes: [
+      {
+        ref: "user",
+        type: mongoose.Schema.ObjectId,
+      },
+    ],
     photos: [String],
   },
   {
