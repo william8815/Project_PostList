@@ -37,5 +37,10 @@ router.get(
     generateUrlJWT(req.user, res);
   }
 );
+router.get(
+  "/getLikeList",
+  isAuth,
+  handleErrorAsync(userController.getLikeList)
+);
 
 module.exports = router;

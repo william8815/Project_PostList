@@ -3,6 +3,7 @@ const appError = require("../services/appError");
 const handleSuccess = require("../services/handleSuccess");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
+const Post = require("../models/posts");
 
 const { generateSendJWT } = require("../services/auth");
 const userController = {
@@ -100,6 +101,18 @@ const userController = {
     const user = await User.findByIdAndUpdate(req.user.id, { password });
     // 產生 & 回傳 JWT token
     generateSendJWT(user, 200, res);
+  },
+  getLikeList: async (req, res, next) => {
+    const likeList = await Post.find({
+      likes: { $in: [req.user.id] },
+    }).populate({
+      path: "user",
+      select: "name _id",
+    });
+    res.status(200).json({
+      status: "success",
+      likeList,
+    });
   },
 };
 module.exports = userController;
