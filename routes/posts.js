@@ -15,5 +15,6 @@ router.delete(
   isAuth,
   handleErrorAsync(postController.deleteLikes)
 );
+router.get("/user/:id", handleErrorAsync(postController.getUserPosts));
 
 module.exports = router;

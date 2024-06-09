@@ -75,5 +75,14 @@ const postController = {
       userId: req.user.id,
     });
   },
+  getUserPosts: async (req, res, next) => {
+    const user = req.params.id;
+    const posts = await Post.find({ user });
+    res.status(200).send({
+      status: "success",
+      results: posts.length,
+      posts,
+    });
+  },
 };
 module.exports = postController;
