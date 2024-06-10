@@ -29,6 +29,24 @@ const userSchema = new mongoose.Schema(
       select: false,
     },
     googleId: String,
+    followers: [
+      {
+        user: { type: mongoose.Schema.ObjectId, ref: "user" },
+        createdAt: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
+    following: [
+      {
+        user: { type: mongoose.Schema.ObjectId, ref: "user" },
+        createdAt: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
   },
   {
     versionKey: false,
