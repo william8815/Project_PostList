@@ -1,5 +1,6 @@
 const Post = require("../models/posts");
 const User = require("../models/users");
+const Comment = require("../models/comments");
 const handleSuccess = require("../services/handleSuccess");
 const appError = require("../services/appError");
 
@@ -14,6 +15,11 @@ const postController = {
       .populate({
         path: "user",
         select: "name photo",
+      })
+      // comment 欄位資料展開
+      .populate({
+        path: "comments",
+        select: "comment user",
       })
       .sort(timeSort);
     handleSuccess(res, posts);
@@ -77,11 +83,30 @@ const postController = {
   },
   getUserPosts: async (req, res, next) => {
     const user = req.params.id;
-    const posts = await Post.find({ user });
+    const posts = await Post.find({ user }).populate({
+      path: "comments",
+      select: "comment user",
+    });
     res.status(200).send({
       status: "success",
       results: posts.length,
       posts,
+    });
+  },
+  createComment: async (req, res, next) => {
+    const user = req.user.id;
+    const post = req.params.id;
+    const { comment } = req.body;
+    const newComment = await Comment.create({
+      post,
+      user,
+      comment,
+    });
+    res.status(201).json({
+      status: "success",
+      data: {
+        comments: newComment,
+      },
     });
   },
 };
