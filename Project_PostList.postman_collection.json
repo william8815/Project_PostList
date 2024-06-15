@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"williamhsu123456@gmail.com\",\r\n    \"password\": \"qwer1234\"\r\n}",
+							"raw": "{\r\n    \"email\": \"williamhsu@gmail.com\",\r\n    \"password\": \"qwer1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -46,7 +46,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"william\",\r\n    \"email\": \"williamhsu123456@gmail.com\",\r\n    \"password\": \"qwer1234\",\r\n    \"confirmPassword\": \"qwer1234\"\r\n}",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"qwer1234\",\r\n    \"confirmPassword\": \"qwer1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -76,8 +76,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
-								"type": "text"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1YWViZGYyN2E1OTJjNjZlMjUyYSIsImlhdCI6MTcxODQ0MjgwMywiZXhwIjoxNzE5MDQ3NjAzfQ.yeWwXrp38CzKyqZdPUX1eCMHV0nbwnm8f8gPE9iISz8"
 							}
 						],
 						"body": {
@@ -112,7 +111,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGFhZjljYjM4N2IxYzQ2NWQwNmJkZCIsImlhdCI6MTcxNzM0MTM0NiwiZXhwIjoxNzE3OTQ2MTQ2fQ.OFnRQe6Qtgu8Cqpl_tivZXbUbVROF4wBlUxeRlRCJbg"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1YWViZGYyN2E1OTJjNjZlMjUyYSIsImlhdCI6MTcxODQ0Mjg1MSwiZXhwIjoxNzE5MDQ3NjUxfQ.m3avxzzV7V3JZxKy4Et-LJPG2hoF7cPlEHUmvdn3mGQ"
 							}
 						],
 						"url": {
@@ -139,8 +138,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjYWY5MDk4MjAzZGJiNmNmYjhkNSIsImlhdCI6MTcxNTM5MTI0NywiZXhwIjoxNzE1OTk2MDQ3fQ.1DIdYL1Y6_3Y3CMxDFugSCjNjdXoJ8BP3dGd3LU-_Rc",
-								"type": "text"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1YWViZGYyN2E1OTJjNjZlMjUyYSIsImlhdCI6MTcxODQ0Mjg1MSwiZXhwIjoxNzE5MDQ3NjUxfQ.m3avxzzV7V3JZxKy4Et-LJPG2hoF7cPlEHUmvdn3mGQ"
 							}
 						],
 						"body": {
@@ -163,6 +161,164 @@
 							"path": [
 								"users",
 								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得所有會員",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "會員按讚追蹤動態",
+			"item": [
+				{
+					"name": "追蹤朋友",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY"
+							}
+						],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users/666d5aebdf27a592c66e252a/follow",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"666d5aebdf27a592c66e252a",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消追蹤朋友",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY"
+							}
+						],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users/666d5aebdf27a592c66e252a/unfollow",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"666d5aebdf27a592c66e252a",
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人按讚列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY"
+							}
+						],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users/getLikeList",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"getLikeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人追蹤名單",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY"
+							}
+						],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users/following",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"following"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得 個人追蹤者名單",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1YWViZGYyN2E1OTJjNjZlMjUyYSIsImlhdCI6MTcxODQ0MjgwMywiZXhwIjoxNzE5MDQ3NjAzfQ.yeWwXrp38CzKyqZdPUX1eCMHV0nbwnm8f8gPE9iISz8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/users/followers",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"followers"
 							]
 						}
 					},
@@ -200,12 +356,12 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGFiNThlYzE0M2M1OTc0MTkwNGVlZSIsImlhdCI6MTcxNjE3NTE1NCwiZXhwIjoxNzE2Nzc5OTU0fQ.vfQi87yvT-3YWzktgAsxGQ82PCKmYzOuCpXGRHsydCc"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user\": \"664ab58ec143c59741904eee\",\r\n    \"content\": \"test 123\"\r\n}",
+							"raw": "{\r\n    \"user\": \"666d5e27df27a592c66e2536\",\r\n    \"content\": \"test 123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -234,7 +390,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGFiNThlYzE0M2M1OTc0MTkwNGVlZSIsImlhdCI6MTcxNjE3NTE1NCwiZXhwIjoxNzE2Nzc5OTU0fQ.vfQi87yvT-3YWzktgAsxGQ82PCKmYzOuCpXGRHsydCc"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY"
 							}
 						],
 						"body": {
@@ -247,7 +403,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://project-postlist.onrender.com/posts/664ac1696de0b7413ce39264",
+							"raw": "https://project-postlist.onrender.com/posts/666d6089df27a592c66e255a",
 							"protocol": "https",
 							"host": [
 								"project-postlist",
@@ -256,7 +412,7 @@
 							],
 							"path": [
 								"posts",
-								"664ac1696de0b7413ce39264"
+								"666d6089df27a592c66e255a"
 							]
 						}
 					},
@@ -269,11 +425,11 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGFiNThlYzE0M2M1OTc0MTkwNGVlZSIsImlhdCI6MTcxNjE3NTE1NCwiZXhwIjoxNzE2Nzc5OTU0fQ.vfQi87yvT-3YWzktgAsxGQ82PCKmYzOuCpXGRHsydCc"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY"
 							}
 						],
 						"url": {
-							"raw": "https://project-postlist.onrender.com/posts/664ac1696de0b7413ce39264",
+							"raw": "https://project-postlist.onrender.com/posts/666d6089df27a592c66e255a",
 							"protocol": "https",
 							"host": [
 								"project-postlist",
@@ -282,7 +438,7 @@
 							],
 							"path": [
 								"posts",
-								"664ac1696de0b7413ce39264"
+								"666d6089df27a592c66e255a"
 							]
 						}
 					},
@@ -295,8 +451,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2VjNDlkMzAwOGZiNDJlMTVkY2M5NyIsImlhdCI6MTcxNTM4OTg2NywiZXhwIjoxNzE1OTk0NjY3fQ.t7_jauhnEnpT7cie4coSORquvY2f6H0koQdMCPLNDvo",
-								"type": "text"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY"
 							}
 						],
 						"url": {
@@ -309,6 +464,120 @@
 							],
 							"path": [
 								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增 單一貼文讚",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY"
+							}
+						],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/posts/666d7684a030a904d194fa76/likes",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"666d7684a030a904d194fa76",
+								"likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消 單一貼文讚",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/posts/666d7684a030a904d194fa76/likes",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"666d7684a030a904d194fa76",
+								"likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增 一則貼文留言",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"HELLO content\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://project-postlist.onrender.com/posts/666d7684a030a904d194fa76/comment",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"666d7684a030a904d194fa76",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得 個人所有貼文",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://project-postlist.onrender.com/posts/user/666d5e27df27a592c66e2536",
+							"protocol": "https",
+							"host": [
+								"project-postlist",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"user",
+								"666d5e27df27a592c66e2536"
 							]
 						}
 					},
@@ -326,7 +595,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGFiNThlYzE0M2M1OTc0MTkwNGVlZSIsImlhdCI6MTcxNzM0MTcyOCwiZXhwIjoxNzE3OTQ2NTI4fQ.zqY8BVt28vjXCeJhR1ZRLds3ynojIvhQeElvZCvt4OM"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NmQ1ZTI3ZGYyN2E1OTJjNjZlMjUzNiIsImlhdCI6MTcxODQ0MzU1OSwiZXhwIjoxNzE5MDQ4MzU5fQ.rQfBJMpmOISz1mFLvdVW0nvBHpqFV0jwz_92kI96hPY"
 							}
 						],
 						"body": {
@@ -335,7 +604,7 @@
 								{
 									"key": "files",
 									"type": "file",
-									"src": "/C:/Users/williamHsu/OneDrive/圖片/螢幕擷取畫面/螢幕擷取畫面 2024-06-02 223459.png"
+									"src": "/C:/Users/williamHsu/OneDrive/圖片/螢幕擷取畫面/螢幕擷取畫面 2023-03-18 144320.png"
 								}
 							]
 						},
