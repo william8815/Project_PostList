@@ -52,5 +52,7 @@ router.delete(
   isAuth,
   handleErrorAsync(userController.deleteFollow)
 );
+router.get("/following", isAuth, handleErrorAsync(userController.getFollowing));
+router.get("/followers", isAuth, handleErrorAsync(userController.getFollower));
 
 module.exports = router;

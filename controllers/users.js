@@ -166,5 +166,27 @@ const userController = {
       message: "您已成功取消追蹤！",
     });
   },
+  getFollowing: async (req, res, next) => {
+    const user = await User.findOne({ _id: req.user.id }).populate({
+      path: "following",
+      populate: { path: "user", select: "name _id" },
+    });
+
+    res.status(200).json({
+      status: "success",
+      data: user.following,
+    });
+  },
+  getFollower: async (req, res, next) => {
+    const user = await User.findOne({ _id: req.user.id }).populate({
+      path: "followers",
+      populate: { path: "user", select: "name _id" },
+    });
+
+    res.status(200).json({
+      status: "success",
+      data: user.followers,
+    });
+  },
 };
 module.exports = userController;
